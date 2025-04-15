@@ -1,8 +1,15 @@
 import re
+import unicodedata
 
-def is_palindrome(texto):  # definimos is_palindrome 
-    texto_limpio = re.sub(r'[^a-zA-ZáéíóúÁÉÍÓÚñÑ]', '', texto).lower()
-    return texto_limpio == texto_limpio[::-1]
+def is_palindrome(text):
+    # Normalizar texto (eliminar tildes, pasar a minúsculas)
+    text = ''.join(
+        c for c in unicodedata.normalize('NFD', text.lower())
+        if unicodedata.category(c) != 'Mn'
+    )
+    text = re.sub(r'[^a-z0-9]', '', text)
+    
+    return text == text[::-1]
 
 
 if __name__ == '__main__':
