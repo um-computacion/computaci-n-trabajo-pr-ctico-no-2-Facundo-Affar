@@ -2,7 +2,6 @@ import re
 import unicodedata
 
 def is_palindrome(text):
-    # Normalizar texto (eliminar tildes, pasar a minúsculas)
     text = ''.join(
         c for c in unicodedata.normalize('NFD', text.lower())
         if unicodedata.category(c) != 'Mn'
