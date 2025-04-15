@@ -19,6 +19,10 @@ class TestPalindromos(unittest.TestCase):
         self.assertFalse(is_palindrome("palabra"))
         self.assertFalse(is_palindrome("python"))
         self.assertFalse(is_palindrome("Esto no es un palíndromo"))
-  
+        
+    def test_casos_edge(self):
+        self.assertTrue(is_palindrome(""))
+        self.assertTrue(is_palindrome("a"))
+        self.assertTrue(is_palindrome("A"))
 if __name__ == '__main__':
     unittest.main()
