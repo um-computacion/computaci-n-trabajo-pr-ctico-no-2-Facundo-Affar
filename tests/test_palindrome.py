@@ -24,5 +24,6 @@ class TestPalindromos(unittest.TestCase):
         self.assertTrue(is_palindrome(""))
         self.assertTrue(is_palindrome("a"))
         self.assertTrue(is_palindrome("A"))
+        
 if __name__ == '__main__':
     unittest.main()
