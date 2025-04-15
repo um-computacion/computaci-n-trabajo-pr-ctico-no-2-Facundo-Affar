@@ -1,6 +1,7 @@
 import re
 import unicodedata
 
+
 def is_palindrome(text):
     text = ''.join(
         c for c in unicodedata.normalize('NFD', text.lower())
@@ -8,6 +9,7 @@ def is_palindrome(text):
     )
     text = re.sub(r'[^a-z0-9]', '', text)
     return text == text[::-1]
+
 
 if __name__ == '__main__':
     try:
